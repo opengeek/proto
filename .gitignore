@@ -1,0 +1,7 @@
+# ignore /vendor/
+/vendor/
+
+# ignore config.php
+/config.php
+# ignore identities.php in root
+/identities.php
