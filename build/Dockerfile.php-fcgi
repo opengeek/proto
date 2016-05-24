@@ -1,0 +1,12 @@
+FROM php:7.0-cli
+ENV REFRESHED_AT 2016-05-23
+
+RUN apt-get update && apt-get install -y libmcrypt-dev
+RUN docker-php-ext-install mbstring pcntl
+
+COPY build/php-fcgi/php.ini /usr/local/etc/php/
+
+ADD . /var/www/html
+
+EXPOSE 9009
+CMD /usr/local/bin/php /var/www/html/bin/fastcgi.php run --port=9009 --host=0.0.0.0

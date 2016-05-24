@@ -6,7 +6,7 @@ php:
 
 web:
   build: .
-  dockerfile: build/Dockerfile.nginx
+  dockerfile: build/Dockerfile.nginx-fpm
   links:
     - php:fpm
   ports:

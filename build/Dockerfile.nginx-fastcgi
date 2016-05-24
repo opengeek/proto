@@ -2,6 +2,6 @@ FROM nginx:1.9
 
 COPY build/nginx/nginx.conf /etc/nginx/nginx.conf
 COPY build/nginx/site.conf /etc/nginx/conf.d/default.conf
-COPY build/nginx/upstream-fpm.conf /etc/nginx/conf.d/upstream.conf
+COPY build/nginx/upstream-fastcgi.conf /etc/nginx/conf.d/upstream.conf
 
 ADD . /var/www/html
