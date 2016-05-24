@@ -22,30 +22,6 @@ php3:
   volumes:
     - .:/var/www/html
 
-php4:
-  build: .
-  dockerfile: build/Dockerfile.php-fcgi
-  expose:
-    - "9009"
-  volumes:
-    - .:/var/www/html
-
-php5:
-  build: .
-  dockerfile: build/Dockerfile.php-fcgi
-  expose:
-    - "9009"
-  volumes:
-    - .:/var/www/html
-
-php6:
-  build: .
-  dockerfile: build/Dockerfile.php-fcgi
-  expose:
-    - "9009"
-  volumes:
-    - .:/var/www/html
-
 web:
   build: .
   dockerfile: build/Dockerfile.nginx-fastcgi
@@ -53,9 +29,6 @@ web:
     - php1
     - php2
     - php3
-    - php4
-    - php5
-    - php6
   ports:
     - 80:80
   volumes:
