@@ -11,9 +11,6 @@
 require __DIR__ . '/../vendor/autoload.php';
 
 $app = new \OpenGeek\Proto\App();
-
 $app->applyMiddleware();
-
 $app->buildRoutes();
-
 $app->run();

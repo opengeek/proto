@@ -1,0 +1,15 @@
+php:
+  build: .
+  dockerfile: build/Dockerfile.php-fpm
+  volumes:
+    - .:/var/www/html
+
+web:
+  build: .
+  dockerfile: build/Dockerfile.nginx
+  links:
+    - php:fpm
+  ports:
+    - 80:80
+  volumes:
+    - .:/var/www/html
